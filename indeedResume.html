@@ -1,0 +1,864 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.print/1.6.0/jQuery.print.js"></script>
+
+<style>
+     .feilds {
+      margin: 2px auto 15px;
+      width: 358px;
+    }
+    .text_button {
+      width: 5ex;
+      text-align: center;
+      padding: 1px 3px;
+    }
+      .outer1skill{
+        top: 0;left: 0;width: 100%;height: 100%;
+
+        
+        }
+    .outer1work{
+        width: 50%;
+        height: 50px;
+        border-radius: 2px;
+        background-color: white;
+        margin: auto;
+    }
+    .outer {
+        top: 0;left: 0;width: 100%;height: 100%;
+
+    }
+
+    .outerinner {
+        width: 80%;
+        height: 200px;
+        border-radius: 2px;
+        background-color: white;
+        padding:15px
+    }
+
+    .profile1 {
+        width: 80%;
+        height: 20px;
+        border-radius: 2px;
+        background-color: white;
+        margin-left: 30px;
+    }
+
+    .profile_label {
+        text-align: left;
+        font-size: 15px;
+        width:auto;
+        height: auto;
+        max-width:300px;
+        margin-top: 2px;
+    background-color: khaki;
+    }
+
+    input[type=text],
+    select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+    #hide_section {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        width: 30%;
+        margin: auto;
+    }
+    #skillform
+    {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        width: 30%;
+        margin: auto;
+    }
+    #workhide_section {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        width: 30%;
+        margin: auto;
+    }
+    #add{
+        overflow-wrap: break-word;
+        max-width: 100%;
+    }
+    #hide_section {
+        display: none;
+
+    }
+    #workhide_section {
+        display: none;
+
+    }
+    #schoolhide_section{
+        display: none;
+    }
+    #schoolhide_section {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        width: 30%;
+        margin: auto;
+    }
+    h1{
+        margin: auto;
+        font-size: 18px;
+        font-style: italic;
+        margin-left: 45%;
+
+    }
+    .work_div
+    {
+        width: 70%;
+        height: 50px;
+        margin: auto;
+        position: relative;
+        margin-top: 12px;
+
+        
+        float: bottom;
+    }
+    .outer1 {
+        top: 0;left: 0;width: 100%;height: 100%;
+    }
+    .outer1school{
+        top: 0;left: 0;width: 100%;height: 100%;
+
+    }
+
+    .outer-inner1 {
+        position: relative;width: 100%;margin: 0px auto;overflow: visible;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        background-color: white;
+    }
+    #skillform
+    {
+        display: none;
+    }
+    .profile_form
+    {
+        position: relative;box-sizing: border-box;box-shadow: transparent 0px 0px 0px 0px;display: flex;
+    }
+    .cs1234{
+
+        overflow-wrap: break-word;
+        max-width: 100%;
+
+    }
+    .add-link{
+        font-weight: 700;
+        padding: 10px 0;
+        font-family: Sans-serif;
+        display: inline-block;
+
+    }
+    #hide_section_name
+    {
+        display: none;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        width: 30%;
+        margin: auto;
+    }
+    #editor1 {
+      border: 3px inset grey;
+      height: auto;
+      width: 200px;
+      margin: 10px auto 0;
+      background-color: white;
+     }
+</style>
+
+<body>
+    <div id="printable">
+        <div  style="background-color: white;width: 40%;height: auto; border: 2px solid black;margin: auto;">
+        <section>
+    <section>
+        <div class="outer" id="show_section_name" style="margin-top: 30px;">
+            <div class="outer-inner">
+            <form class="profile_form">
+
+                <div class="profile1" onclick="namefunction()">
+                    <p class="profile_label" id="name_profile">Name
+
+                </div>
+            </form>
+
+            </div>
+
+
+        </div>
+        <div id="hide_section_name">
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="profile_name" name="profile_name" placeholder="Name..">
+                <input type="button" value="Submit" id="submit1" onclick="namemyfunc()">
+
+    </section>
+    <section>
+  
+        <form class="profile_form">
+        <div id="show_section" class="outer">
+            <div class="outer-inner">
+                <br>
+                <div class="profile1" onclick="myfunc()">
+                    <p class="profile_label" id="profile_location">Location
+
+                    </p>
+
+
+                </div>
+                <div class="profile1" onclick="myfunc()">
+                    <p class="profile_label" id="profile_phone">PhoneNo</p>
+                </div>
+                <br>
+                <div class="profile1" onclick="myfunc()">
+                    <label class="profile_label" id="profile_email">EmailAddress</label>
+                </div>
+
+            </div>
+
+        </div>
+    </form>
+
+
+        <div id="hide_section">
+            <form>
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" placeholder="location..">
+
+                <label for="phone">PhoneNo</label>
+                <input type="text" id="phone" name="phone" placeholder="phone..">
+
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="email..">
+
+
+                <input type="button" value="Submit" id="submit2" onclick="fill()">
+                <input type="button" value="Close"  onclick="closewindow1()">
+
+            </form>
+        </div>
+    </section>
+<section>
+    <div class="work_div">
+<hr>
+<div >
+<h1>
+    Work Experience
+</h1>
+
+</div>
+<hr>
+</div>
+<div id="date_fill" style="width:25%;height: 20px;background-color: white;float: right;margin-top: 20px;margin-right: 55px;">
+
+</div>
+</section>
+    <section>
+        <div id="workshow_section"  class="cs1234">
+        
+        <form id="workform" class="profile_form" tabindex=0 >
+                <div class="outer1">
+            <div class="outer-inner1">
+                <br>
+                <div class="profile1" onclick="workmyfunc()">
+                    <p class="profile_label" id="profile_pos">Position
+
+                    </p>
+
+
+                </div>
+                <div class="profile1" onclick="workmyfunc()">
+                    <p class="profile_label" id="profile_cname">Company Name</p>
+                </div>
+                <br>
+                <div class="profile1" onclick="workmyfunc()">
+                    <label class="profile_label"  id="profile_wloc">Location</label>
+                </div>
+                <br>
+                <div  onclick="workmyfunc()"class="profile1" style="height: auto;height: auto;overflow-y: auto;tab-size: 4;              ">
+                    <p style="line-height: 16pt;word-break: break-word;" class="profile_label" id="profile_desc" >Description</p>
+                </div>
+               
+            </div>
+            
+        </div>
+        
+        </form>
+        
+        <a class="add-link k-pdf-hidden profile1 " onclick="showResult()" id="a_select"><span class="add-link__plus">+</span><span class="add-link__text">Add Work Experience</span></a>
+    </div>
+    <div id="add">
+
+    </div>
+   
+
+
+
+        <div id="workhide_section">
+            <div>
+            <form>
+                <label for="label_position">Job Title</label>
+                <input type="text" id="position" name="position" placeholder="posi tion..">
+                
+                <input type="checkbox" id="work" name="work" onchange="checkdate()"> I currently work here
+                <br>
+                <br>
+                <label class="icl-TextInput-label">Start date (MM/YYYY)</label>
+                <input class="myind-DateRange-month"   id="s_month" placeholder="month">  <input type="text" id="s_year"placeholder="year">
+                <br>
+                <br>
+                <br>
+                <div id="end_year">
+                <label class="icl-TextInput-label">End date (MM/YYYY)</label>
+                <input class="myind-DateRange-month"   id="e_month" placeholder="month">  <input type="text" id="e_year"placeholder="year">
+               
+                <br>
+             </div>
+
+                <label for="label_cname">Company Name</label>
+                <input type="text" id="cname" name="cname" placeholder="Company Name..">
+
+                <label for="loc_label">Location</label>
+                <input type="text" id="w_location" name="w_location" placeholder="Location..">
+            </form>
+
+                <label for="desc">Description</label>
+               
+                <div id="editor1"  contenteditable="true">
+                </div>
+                
+                    <button class="fontStyle text_button" id="jitalic"title="Italicize Highlighted Text"><i>I</i>
+                    </button>
+                    <button class="fontStyle text_button" id= "jbold" title="Bold Highlighted Text"><b>B</b>
+                    </button>
+                    <button class="fontStyle text_button" id="jFont" ><u>F-7</u>
+                        <button class="fontStyle text_button" id="jFont1" ><u>F-2</u>
+
+                    </button>
+            
+                <br>
+                <br>
+
+                <input type="button" value="Submit" id="submit3" onclick="workfill()">
+                <input type="button" value="Close"  onclick="closewindow2()">
+
+            
+        </div>
+    </section>
+    
+    <section>
+        <div class="work_div">
+    <hr>
+    <div >
+    <h1>
+    Skills    
+    </h1>
+    
+    </div>
+    <hr>
+    </div>
+</section>
+<section>
+    <form class="profile_form">
+       <div id="skillform">
+       
+            <label for="label_position">Skill</label>
+            <input type="text" id="skill" name="Skill" placeholder=" Add skill..">
+           <label for="Experience">Years of Experience</label>
+           <input type="text" id="Experience" name="Experience" placeholder="Years of Experience">
+            <input type="button" value="Submit" id="submit4" onclick="skillfill()">
+            <input type="button" value="Close"  onclick="closewindow3()">
+
+        
+    </div>
+</form>
+    
+    
+    <div id="skillSection" class="outer1skill">
+        <div class="outer-inner1">
+            <br>
+                
+            <div class="profile1" onclick="skillform()">
+                <label class="profile_label" id="profile_skill">Skill</label>
+            
+         
+                <label class="profile_label" id="profile_yoe">Years Of Experience</label>
+           </div>
+        </div>
+        
+    </div>
+</section>
+
+<section>
+    <div class="work_div">
+<hr>
+<div >
+<h1>
+    Education
+</h1>
+
+</div>
+<hr>
+</div>
+
+</section>
+    <section>
+        <form class="profile_form">
+        <div id="schoolshow_section" class="outer1school">
+            <div class="outer-inner1">
+                <br>
+                <div class="profile1" onclick="schoolmyfunc()">
+                    <p class="profile_label" id="profile_school">School
+
+                    </p>
+
+
+                </div>
+                <div class="profile1" onclick="schoolmyfunc()">
+                    <p class="profile_label" id="profile_degree">Degree</p>
+                </div>
+                <br>
+                <div class="profile1" onclick="schoolmyfunc()">
+                    <label class="profile_label" id="profile_feild">Feild of study</label>
+                </div>
+                <br>
+                <div class="profile1" onclick="schoolmyfunc()">
+                    <label class="profile_label" id="profile_school_loc">Location</label>
+                </div>
+               
+            </div>
+            
+        </div>
+    </form>
+       
+
+
+
+
+        <div id="schoolhide_section">
+            <form>
+                <label for="label_position">School</label>
+                <input type="text" id="school" name="position" placeholder="position..">
+                
+                <input type="checkbox" id="school_change" name="school_change" onchange="checkdate()">Currently Attending
+                <br>
+                <br>
+                <label class="icl-TextInput-label">Start date (MM/YYYY)</label>
+                <input class="myind-DateRange-month" placeholder="MM" max="12" maxlength="2" type="number" value=""> <input placeholder="YYYY" maxlength="4" max="9999" type="number" value="">
+                <br>
+                <br>
+                <br>
+                <div id="end_school">
+                <label class="icl-TextInput-label">End date (MM/YYYY)</label>
+                <input class="myind-DateRange-month" placeholder="MM" max="12" maxlength="2" type="number" value="">  <input placeholder="YYYY" maxlength="4" max="9999"  type="number" value=""></div>
+               
+                <br>
+                <legend>Degree</legend>
+                <select class="form-control dropdown" id="education" name="education">
+                  <option value="" selected="selected" disabled="disabled">-- select one --</option>
+                  <option value="No formal education">No formal education</option>
+                  <option value="Primary education">Primary education</option>
+                  <option value="Secondary education">Secondary education or high school</option>
+                  <option value="GED">GED</option>
+                  <option value="Vocational qualification">Vocational qualification</option>
+                  <option value="Bachelor's degree">Bachelor's degree</option>
+                  <option value="Master's degree">Master's degree</option>
+                  <option value="Doctorate or higher">Doctorate or higher</option>
+                </select>
+
+                <label for="label_cname">Feild Of study</label>
+                <input type="text" id="field_study" name="field_study" placeholder="field_study..">
+
+                <label for="loc_label">Location</label>
+                <input type="text" id="s_location" name="s_location" placeholder="Location..">
+
+
+                <input type="button" value="Submit" id="submit5" onclick="schoolfill()">
+                <input type="button" value="Close"  onclick="closewindow4()">
+
+            </form>
+        </div>
+    </section>
+</div>
+
+<input type="submit" id="submit_p"value="Export to PDF" > </fieldset>
+</div>
+</section>
+</body>
+<script>
+    var totalExp = 1;
+   
+    function addExp(){
+        var str = $('workhide_section').insert(".");
+            alert(str.innerHTML );
+    }
+
+    function addExp(e) {
+        $("#workhide_section").html("click event has been triggered..</br>" + $("#workhide_section").html());
+    }
+    function myfunc() {
+        //alert('ing');
+        if (document.getElementById('hide_section').style.display == 'none') {
+            document.getElementById('show_section').style.display = 'none';
+            document.getElementById('hide_section').style.display = 'block';
+        }
+        else {
+            document.getElementById('show_section').style.display = 'block';
+            document.getElementById('hide_section').style.display = 'none';
+        }
+    }
+    function fill() {
+
+        var a = document.getElementById("location").value;
+        var b = document.getElementById("phone").value;
+        var c = document.getElementById("email").value;
+    
+
+        document.getElementById("profile_location").innerHTML = a;
+        document.getElementById("profile_phone").innerHTML = b;
+        document.getElementById("profile_email").innerHTML = c;
+
+        myfunc();
+    }
+    function closewindow1()
+    {
+        document.getElementById('show_section').style.display = 'block';
+            document.getElementById('hide_section').style.display = 'none';
+    }
+    function workmyfunc() {
+        //alert('ing');
+        if (document.getElementById('workhide_section').style.display == 'none') {
+            document.getElementById('workshow_section').style.display = 'none';
+            document.getElementById('workhide_section').style.display = 'block';
+        }
+        else {
+            document.getElementById('workshow_section').style.display = 'block';
+            document.getElementById('workhide_section').style.display = 'none';
+        }
+    }
+    function closewindow2()
+    {
+        document.getElementById('workshow_section').style.display = 'block';
+            document.getElementById('workhide_section').style.display = 'none';
+    }
+    function workmyfunc1() {
+        //alert('ing');
+        alert(document.getElementById("workform"));
+        var form=document.getElementById("workform");
+        form.reset();
+
+        if (document.getElementById('workhide_section').style.display == 'none') {
+            document.getElementById('workshow_section').style.display = 'none';
+            document.getElementById('workhide_section').style.display = 'block';
+        }
+        else {
+            document.getElementById('workshow_section').style.display = 'block';
+            document.getElementById('workhide_section').style.display = 'none';
+        }
+    }
+    function skillform(){
+        if (document.getElementById('skillform').style.display == 'none') {
+            document.getElementById('skillSection').style.display = 'none';
+            document.getElementById('skillform').style.display = 'block';
+        }
+        else {
+            document.getElementById('skillSection').style.display = 'block';
+            document.getElementById('skillform').style.display = 'none';
+        }
+    }
+    function closewindow3()
+    {
+        document.getElementById('skillSection').style.display = 'block';
+            document.getElementById('skillform').style.display = 'none';
+    }
+
+    function checkdate()
+    {
+
+        if(document.getElementById("school_change").checked)
+        {
+            //alert("hi")
+            document.getElementById("end_school").style.display='none';
+
+        }
+        else{           
+        
+            //alert("hi")
+            document.getElementById("end_school").style.display='block';
+
+        
+        }
+
+        if(document.getElementById("work").checked)
+        {
+            //alert("hi")
+            document.getElementById("end_year").style.display='none';
+
+        }
+        else{            
+        
+            //alert("hi")
+            document.getElementById("end_year").style.display='block';
+
+        
+        }
+    }
+    function workfill() {
+
+        var a = document.getElementById("position").value;
+        var b = document.getElementById("cname").value;
+        var c = document.getElementById("w_location").value;
+        //var d = document.getElementById("description").value;
+        var e=document.getElementById("work");
+        //console.log(e);
+        var f=document.getElementById("s_month").value;
+        var g=document.getElementById("s_year").value;
+        if(document.getElementById("work").checked)
+        {
+            document.getElementById("date_fill").innerHTML =g +" " +f+ "-"+ "Present";
+        }
+        else
+        {
+        var h=document.getElementById("e_month").value;
+        var i=document.getElementById("e_year").value;
+        document.getElementById("date_fill").innerHTML =g +" " +f + "-"+ i +" "+h;
+        }
+        //alert(f+g);
+
+      
+
+       
+
+        document.getElementById("profile_pos").innerHTML = a;
+        document.getElementById("profile_cname").innerHTML = b;
+        document.getElementById("profile_wloc").innerHTML = c;
+       // document.getElementById("profile_desc").innerHTML = d;
+
+
+       workmyfunc();
+    }
+    function skillfill() {
+var a = document.getElementById("skill").value;
+var b = document.getElementById("Experience").value;
+document.getElementById("profile_skill").innerHTML = a;
+document.getElementById("profile_yoe").innerHTML = b;
+
+
+skillform();
+}
+
+function schoolmyfunc() {
+        //alert('ing');
+        if (document.getElementById('schoolhide_section').style.display == 'none') {
+            document.getElementById('schoolshow_section').style.display = 'none';
+            document.getElementById('schoolhide_section').style.display = 'block';
+        }
+        else {
+            document.getElementById('schoolshow_section').style.display = 'block';
+            document.getElementById('schoolhide_section').style.display = 'none';
+        }
+    }
+
+    function schoolfill() {
+
+var a = document.getElementById("school").value;
+var b = document.getElementById("education").value;
+var c = document.getElementById("field_study").value;
+var d = document.getElementById("s_location").value;
+//var e=document.getElementById("work");
+//console.log(e);
+
+
+
+document.getElementById("profile_school").innerHTML = a;
+document.getElementById("profile_degree").innerHTML = b;
+document.getElementById("profile_feild").innerHTML = c;
+document.getElementById("profile_school_loc").innerHTML = d;
+
+
+schoolmyfunc();
+}
+function closewindow4()
+{
+    document.getElementById('schoolshow_section').style.display = 'block';
+            document.getElementById('schoolhide_section').style.display = 'none';
+
+}
+
+function namefunction() {
+        //alert('ing');
+        if (document.getElementById('hide_section_name').style.display == 'none') {
+            document.getElementById('show_section_name').style.display = 'none';
+            document.getElementById('hide_section_name').style.display = 'block';
+        }
+        else {
+            document.getElementById('show_section_name').style.display = 'block';
+            document.getElementById('hide_section_name').style.display = 'none';
+        }
+    }
+
+function namemyfunc()
+{
+    var a = document.getElementById("profile_name").value;
+
+    document.getElementById("name_profile").innerHTML = a;
+   
+    namefunction();
+}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.print/1.6.0/jQuery.print.js"></script>
+
+<script>
+$(document).ready(function(){
+    $( "#jbold" ).click(
+						function(){
+                            document.execCommand("bold",true);
+                           
+
+                            //document.getElementById('workhide_section').style.display = 'block';
+
+});
+$( "#submit_p" ).click(
+						function(){
+                            alert("hi")
+							// Print the DIV.
+							$( "#printable" ).print();
+
+							// Cancel click event.
+							return( false );
+});
+
+$( "#jitalic" ).click(
+						function(){
+                            document.execCommand("italic",true);
+
+                            //document.getElementById('workhide_section').style.display = 'block';
+
+});
+$( "#jFont" ).click(
+						function(){
+                            document.execCommand("fontSize", true, "5");
+
+                            //document.getElementById('workhide_section').style.display = 'block';
+
+});
+$( "#jFont1" ).click(
+						function(){
+                            document.execCommand("fontSize", true, "3");
+
+                            //document.getElementById('workhide_section').style.display = 'block';
+
+});
+    $("#a_select").click(
+						function(){
+                            alert("hi")
+                            //alert("hi")
+							// Print the DIV.
+                           // $("#name_profile").css({"background-color": "white","font-size":"25px","font-wight":"800px"});
+                            //alert("hi")
+                            $("#workshowSection").clone().appendTo("#workshowSection");
+
+
+                            //jQuery("#workshowSection").append(jQuery("#workshowSection").children().first().clone())
+                          
+                    
+});
+
+    $( "#submit1" ).click(
+						function(){
+                            //alert("hi")
+							// Print the DIV.
+                            $("#name_profile").css({"background-color": "white","font-size":"25px","font-wight":"800px"});
+                            //alert("hi")
+
+                            //jQuery("#a_select").append(jQuery("#workhide_section").children().first().clone())
+                          
+                    
+});
+    $( "#submit2" ).click(
+						function(){
+                            //alert("hi")
+							// Print the DIV.
+                            $("#profile_location").css("background-color", "white");
+                            $("#profile_phone").css("background-color", "white");
+
+                            $("#profile_email").css("background-color", "white");
+
+});
+
+
+$( "#submit3" ).click(
+						function(){
+                            //alert("hi")
+                           // alert("hi")
+							// Print the DIV.
+                            $("#profile_pos").css({"background-color": "white","font-size":"25px"});
+                            $("#profile_cname").css("background-color", "white");
+
+                            $("#profile_wloc").css("background-color", "white");
+                            $("#profile_desc").css("background-color", "white");
+                            var mb = $('#editor1').html();
+                            $("#profile_desc").html(mb);
+
+
+});
+$( "#submit4" ).click(
+						function(){
+                            //alert("hi")
+                           // alert("hi")
+							// Print the DIV.
+                            $("#profile_skill").css("background-color", "white");
+                            $("#profile_yoe").css("background-color", "white");
+
+
+
+});
+$( "#submit5" ).click(
+						function(){
+                            //alert("hi")
+                           // alert("hi")
+							// Print the DIV.
+                            $("#profile_school").css({"background-color": "white","font-size":"25px"});
+                            $("#profile_degree").css("background-color", "white");
+                            $("#profile_feild").css("background-color", "white");
+                            $("#profile_school_loc").css("background-color", "white");
+
+
+
+});
+});
+</script>
